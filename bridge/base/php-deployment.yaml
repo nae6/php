@@ -1,0 +1,39 @@
+#! php-deployment.yaml
+# Generated code, do not edit
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: php
+    namespace: php
+    labels:
+        com.docker.compose.project: php
+        com.docker.compose.service: php
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            com.docker.compose.project: php
+            com.docker.compose.service: php
+    strategy:
+        type: Recreate
+    template:
+        metadata:
+            labels:
+                com.docker.compose.project: php
+                com.docker.compose.service: php
+                com.docker.compose.network.default: "true"
+        spec:
+            containers:
+                - name: php
+                  image: php-php
+                  imagePullPolicy: IfNotPresent
+                  ports:
+                    - name: php-9000
+                      containerPort: 9000
+                  volumeMounts:
+                    - name: var-www
+                      mountPath: /var/www
+            volumes:
+                - name: var-www
+                  hostPath:
+                    path: /Users/kanae/coachtech/php/src

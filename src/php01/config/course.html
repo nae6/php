@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- POST -->
+    <form action="course.php" method="GET">
+        <!-- action:遷移するファイル名 method:GET/POST
+        inputタグのname属性：$_POST[name]添え字と対応-->
+        <label for="company_name">
+            会社名：<input type="text" name="company">
+        </label>
+        <br>
+        <input type="submit" name="submit" value="送信する">
+        <!-- type:部品の種類 name:部品の名前 value:初期値/送信されるデータ/ボタンのラベル
+            text	1行分のテキストフィールド
+            tel	1行分の電話番号フィールド
+            url	1行分のURLフィールド
+            email	1行分のメールアドレスフィールド
+            search	1行分の検索フィールド
+            date	年月日入力用部品
+            password	パスワード
+            radio	ラジオボタン（複数選択できない選択部品）
+            checkbox	チェックボックス（複数選択できる選択部品）
+            file	ファイル送信用ボタン
+            submit	送信ボタン
+        -->
+    </form>
+</body>
+</html>
